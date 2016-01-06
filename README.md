@@ -23,7 +23,7 @@ Apple Music doesn't like it when we're adding a lot of songs in a small amount o
 
 ### Missing songs
 The original script used a method to retrieve the Apple Music identifier for a Spotify song that was quite basic. It simply compared the title and artist to find out if a Spotify and Apple Music song match. Some songs don't have the exact same title (extraneous spacing for example) in both services. This resulted in the script failing to retrieve an identifier for quite a number of songs. 
-I've decided to add album as a third field in the input CSV file so that this can be used as an additional search term. Furthermore I added the artist to the song title for the initial search, to yield a result set from Apple Music that is more likely to contain the result we need. This considerable improved the results.
+I've decided to add album as a third field in the input CSV file so that this can be used as an additional search term. Furthermore I added the artist to the song title for the initial search, to yield a result set from Apple Music that is more likely to contain the result we need. This improved the results considerably.
 
 
 ### Terminal encoding
