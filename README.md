@@ -7,6 +7,7 @@ Some simple Python 3 scripts to help you into importing your existing Spotify li
 ### 1. Export the Spotify songs to an CSV File
 The first step is getting the songs you want to import into Apple Music into a CSV file. The simplest way to do this is using [Exportify](https://rawgit.com/watsonbox/exportify/master/exportify.html).  
 If you want to export you whole Spotify library, simply create a new playlist called *All* and drag your whole library into it using the Spotify desktop app. You can then export the playlist *All* using *Exportify*. Save the resulting file as *spotify.csv* in the same directory as the directory you cloned this repo into.
+If you just want 1 particular playlist (as I was interested specifically in the 'Discover Weekly Playlist'), you can use the export-spotify-dw-playlist.py script found in this repository.
 
 ### 2. Match the Spotify songs with their Apple Music identifier
 In order to add songs to our Apple Music library, we need their Apple Music identifier. Running `python3 retrieve-identifiers.py` will use the *spotify.csv* file to create a new file *itunes.csv* with each line consisting of the Apple Music identifier of a song in your Spotify library.
