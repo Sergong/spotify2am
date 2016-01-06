@@ -22,7 +22,9 @@ Next, run `python3 insert-songs.py` and go grab a coffee. You're songs are now b
 Apple Music doesn't like it when we're adding a lot of songs in a small amount of time. If we do so, the API responds to all further request with `403 Too many requests`. After this, you're blocked from the API for an undetermined amount of time. We're currently trying to avoid this by waiting after each request. A delay of 30 seconds seems fine to import large libraries into Apple Music. If you're library is smaller, feel free to decrease the delay in `inserts-songs.py`.
 
 ### Missing songs
-The script I'm using to retrieve the Apple Music identifier for a Spotify song is quite basic. It simply compares the title and artist to find out if a Spotify and Apple Music song match. Some songs don't have the exact same title (extraneous spacing for example) in both services. This results in the script failing to retrieve an identifier for some songs.
+The original script used a method to retrieve the Apple Music identifier for a Spotify song that was quite basic. It simply compared the title and artist to find out if a Spotify and Apple Music song match. Some songs don't have the exact same title (extraneous spacing for example) in both services. This resulted in the script failing to retrieve an identifier for quite a number of songs. 
+I've decided to add album as a third field in the input CSV file so that this can be used as an additional search term. Furthermore I added the artist to the song title for the initial search, to yield a result set from Apple Music that is more likely to contain the result we need. This considerable improved the results.
+
 
 ### Terminal encoding
 Some users are reporting errors like `UnicodeEncodeError: 'ascii' codec can't encode character '\xd8' in ...` when running the scripts. The problem here is that Python is trying to convert UTF-8 characters to ASCII to print them to standard output. This can be solved by setting the `PYTHONIOENCODING` environment variable to `utf-8`.  
